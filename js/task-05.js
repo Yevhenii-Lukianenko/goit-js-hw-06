@@ -1,11 +1,11 @@
-const refInput = document.querySelector('#name-input');
-const refTitle = document.querySelector('#name-output');
+const nameInput = document.querySelector('#name-input');
+const textTitle = document.querySelector('#name-output');
 
-function addChangeToName() {
-  if (refInput.value === '') {
-    return (refTitle.textContent = 'Anonymous');
+function changesNameInTitle() {
+  if (nameInput.value === '') {
+    return (textTitle.textContent = 'Anonymous');
   }
-  return (refTitle.textContent = refInput.value);
+  return (textTitle.textContent = nameInput.value);
 }
 
-refInput.addEventListener('input', addChangeToName);
+nameInput.addEventListener('input', changesNameInTitle);

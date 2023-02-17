@@ -1,6 +1,6 @@
-const refInput = document.querySelector('#font-size-control');
-const refText = document.querySelector('#text');
+const rangeInput = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
 
-refInput.addEventListener('input', () => {
-  refText.style.fontSize = refInput.value + 'px';
+rangeInput.addEventListener('input', () => {
+  text.style.fontSize = rangeInput.value + 'px';
 });

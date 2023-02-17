@@ -1,13 +1,13 @@
-const refInput = document.querySelector("#validation-input");
-const dataLength = refInput.getAttribute("data-length");
+const symbolsInput = document.querySelector('#validation-input');
+const necessaryAmountOfSymbolsInput = symbolsInput.getAttribute('data-length');
 
-refInput.addEventListener("blur", validatesInput);
+symbolsInput.addEventListener('blur', validatesInput);
 
 function validatesInput() {
-  if (refInput.value.length == dataLength) {
-    refInput.classList.remove("invalid");
-    return refInput.classList.add("valid");
+  if (symbolsInput.value.length == necessaryAmountOfSymbolsInput) {
+    symbolsInput.classList.remove('invalid');
+    return symbolsInput.classList.add('valid');
   }
-  refInput.classList.remove("valid");
-  return refInput.classList.add("invalid");
+  symbolsInput.classList.remove('valid');
+  return symbolsInput.classList.add('invalid');
 }

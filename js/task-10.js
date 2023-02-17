@@ -4,10 +4,10 @@ function getRandomHexColor() {
 
 const createBtn = document.querySelector('[data-create]');
 const destroyBtn = document.querySelector('[data-destroy]');
-const input = document.querySelector('input');
+const inputField = document.querySelector('input');
 const boxes = document.querySelector('#boxes');
 
-const arrayOfElements = [];
+const arrayOfCreatedElements = [];
 let valueOfBoxSize = 20;
 
 // ================================= Creates elements =====================================
@@ -15,6 +15,7 @@ let valueOfBoxSize = 20;
 function createBoxes(amount) {
   // Adds check for input number
   if (amount > 100 || amount < 1) {
+    inputField.value = '';
     return alert('Incorrect quantity. Please enter a number from 1 to 100.');
   }
 
@@ -29,21 +30,21 @@ function createBoxes(amount) {
     createsElement.style.width = valueOfBoxSize + 'px';
     createsElement.style.height = valueOfBoxSize + 'px';
 
-    arrayOfElements.push(createsElement);
+    arrayOfCreatedElements.push(createsElement);
   }
-  boxes.append(...arrayOfElements);
+  boxes.append(...arrayOfCreatedElements);
 }
 
 createBtn.addEventListener('click', () => {
-  createBoxes(input.value);
+  createBoxes(inputField.value);
 });
 
 // ================================= Destroys elements =====================================
 
 function destroyBoxes() {
   boxes.replaceChildren();
-  input.value = '';
-  arrayOfElements.length = 0;
+  inputField.value = '';
+  arrayOfCreatedElements.length = 0;
   valueOfBoxSize = 20;
 }
 
